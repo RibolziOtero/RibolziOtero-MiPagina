@@ -1,0 +1,188 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="hoja_de_estilo.css"> <!-- Incluye archivo CSS aquí -->
+
+        <!-- Fuente descargada -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+        <title>Mariel Nataly Ribolzi Otero</title> 
+    </head>
+    <body>
+        <header class="header-principal"> 
+            <h1 class="titulo">Mariel Nataly Ribolzi Otero</h1>
+            <h2>Mi primera página personal</h2>
+            <p>(Vaya nombre más largo, pero si no lo pongo completo suele ocurrir que se den confusiones administrativas ah)</p>
+            <img src="img/CURZA-logo.png" alt="Logo del CURZA" class="logo">
+        </header>
+        <header class="fijo">
+            <h2>¡Encabezado fijo con fuente web!</h2>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="acercade.html">Acerca de</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section class="section-contacto">
+                <h3>Formulario de contacto:</h3>
+                <form action="/contacto.php" method="post"> <!-- /contact.php no existe, es solo para ejemplo-->
+
+                    <fieldset>
+                        <legend>Datos personales:</legend>
+                        <!--Nombre-->
+                        <p><label>Nombre: <input type="text" name="nombre" maxlength="20" required></label></p> <!--Si no pusiese el type text, el navegador lo asumiría por defecto, pero por el momento lo dejaré así. -->
+                        <!--Apellido-->
+                        <p><label>Apellido: <input type="text" name="apellido" maxlength="20"></label></p>
+                        <!--Email-->
+                        <p><label>Email: <input type="email" name="email" required></label></p> 
+                        <!--Teléfono-->
+                        <p><label>Teléfono: <input type="tel" name="telefono" placeholder="2920874624"></label></p>
+                        <!--Edad-->
+                        <p>
+                            <label for="edad">Edad (entre 16 años y 120 años):</label>
+                            <input type="range" id="edad" min="16" max="120" oninput="document.getElementById('valorEdad').textContent = this.value">
+                            <span id="valorEdad">16</span> <!-- Mostrará el valor actual del control -->
+                        </p>
+
+                        <!--Dirección-->
+                        <p class="corregir-1"><label for="direccion">Dirección:</label></p>
+                        <p class="corregir-2"><textarea id="direccion" name="direccion" rows="4" cols="25"></textarea></p>
+                        <!--Provincia-->
+                        <p>
+                            <label for="provincia">Provincia:</label>
+                            <input type="text" id="provincia" name="provincia" list="provinciasPatagonicas" />
+                            <datalist id="provinciasPatagonicas">
+                                <option value="Neuquén"></option>
+                                <option value="Río Negro"></option>
+                                <option value="Chubut"></option>
+                                <option value="Santa Cruz"></option>
+                                <option value="Tierra del Fuego"></option>
+                            </datalist>
+                        </p>
+                        <!--Código postal-->
+                        <p><label>Código postal: <input type="text" name="codi_postal" pattern="[A-Z][0-9]{4}[A-Z]{3}" placeholder="A1234ABC"></label></p>
+                    </fieldset>
+            
+                    <fieldset class="field">
+                        <legend>Método preferido de contacto: </legend>
+                        <!--Método de contacto-->
+                        <!--Todos los radio buttom deben tener el mismo name-->
+                        <p><label>Correo electrónico <input type="radio" name="metodo_contacto" value="correo_electronico" checked></label></p> 
+                        <p><label>Correo postal <input type="radio" name="metodo_contacto" value="correo_postal"></label></p>
+                        <p><label>Teléfono <input type="radio" name="metodo_contacto" value="telefono"></label></p>
+                        <!--Si selecciono, por ejemplo, la primera opción, se enviará al servidor el campo "metodo_contacto" con el valor "correo_electronico"-->
+                    </fieldset>
+
+
+                    <fieldset class="field">
+                        <legend>Tipo de subscripción: </legend>
+                        <!--Tipo de subscripcción-->
+                        <!--Todos los checkbox deben tener distintos name-->
+                        <!--El value no es absolutamente necesario porque porque lo que se enviará al servidor es el valor del checkbox como on (si está seleccionado)-->
+                        <p><label>Deseo recibir noticias <input type="checkbox" name="noticial"></label></p> 
+                        <p><label>Deseo recibir promociones <input type="checkbox" name="promociones"></label></p>
+                        <p><label>Deseo recibir alertas <input type="checkbox" name="alertas" checked></label></p>
+                        <p><label>Deseo recibir avisos de eventos <input type="checkbox" name="avisos_de_eventos"></label></p>
+                    </fieldset>
+
+                    <!--Botón de cargar-->
+                    <div class="boton-contenedor"> <!--Acá uso div porque tuve unos problemas para centrar el botón al aplicar el estilo-->
+                        <input type="submit" value="Cargar" class="boton-submit">
+                    </div>
+
+               
+                </form>
+        
+                <!--Tabla-->
+                <table>
+                    <thead> <!-- sería el encabezado de la tabla (también se podría agregar un tfoot abajo del tbody)-->
+                        <tr> <!-- tr se refiere a las filas-->
+                            <th>Campo</th> <!-- th se refiere al título de cada columna-->
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody> <!-- sería el cuerpo de la tabla-->
+                        <tr>
+                            <td>Nombre</td> <!-- td sería el dato en la columna-->
+                            <td></td> <!-- Esto quiere decir que hay un segundo dato en la fila, pero que está vacío-->
+                        </tr>
+                        <tr>
+                            <td>Apellido</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Teléfono</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Edad</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Dirección</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Provincia</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Código postal</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Método de contacto</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Recibir</td>
+                            <td></td>
+                        </tr>
+                
+                    </tbody>
+                </table>
+
+            </section>
+
+                <!-- Botón con flecha para volver hacía el inicio al hacer click: -->
+            <div class="boton-flecha-contenedor"> <!--Acá uso div porque tuve unos problemas para centrar el botón al aplicar el estilo-->
+                <button type="button" class="boton-subir">&#8593;</button>
+            </div>
+            
+        </main>
+
+        
+      
+        <footer> 
+            <p class="p1">
+                &copy; 2024 Mariel Nataly Ribolzi Otero. Proyecto académico. Todos los derechos reservados
+            </p>
+            <p class="p2">
+                Dirección del CURZA: Monseñor Esandi y Ayacucho, 8500 - Viedma, Río Negro, Argentina
+            </p>
+        </footer>
+
+        <script src="script.js" defer></script> <!-- Incluye archivo JavaScript aquí -->
+    </body>
+</html>
+
+
+
+
