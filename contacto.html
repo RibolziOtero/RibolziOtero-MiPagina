@@ -86,16 +86,13 @@
                         <!--Si selecciono, por ejemplo, la primera opción, se enviará al servidor el campo "metodo_contacto" con el valor "correo_electronico"-->
                     </fieldset>
 
-
                     <fieldset class="field">
                         <legend>Tipo de subscripción: </legend>
                         <!--Tipo de subscripcción-->
-                        <!--Todos los checkbox deben tener distintos name-->
-                        <!--El value no es absolutamente necesario porque porque lo que se enviará al servidor es el valor del checkbox como on (si está seleccionado)-->
-                        <p><label>Deseo recibir noticias <input type="checkbox" name="noticial"></label></p> 
-                        <p><label>Deseo recibir promociones <input type="checkbox" name="promociones"></label></p>
-                        <p><label>Deseo recibir alertas <input type="checkbox" name="alertas" checked></label></p>
-                        <p><label>Deseo recibir avisos de eventos <input type="checkbox" name="avisos_de_eventos"></label></p>
+                        <p><label>Deseo recibir noticias <input type="checkbox" name="opciones_de_avisos" value="noticias"></label></p> 
+                        <p><label>Deseo recibir promociones <input type="checkbox" name="opciones_de_avisos" value="promociones"></label></p>
+                        <p><label>Deseo recibir alertas <input type="checkbox" name="opciones_de_avisos" value="opciones_de_avisos"></label></p>
+                        <p><label>Deseo recibir avisos de eventos <input type="checkbox" name="opciones_de_avisos" value="avisos_de_eventos"></label></p>
                     </fieldset>
 
                     <!--Botón de cargar-->
@@ -182,7 +179,5 @@
         <script src="script.js" defer></script> <!-- Incluye archivo JavaScript aquí -->
     </body>
 </html>
-
-
 
 
