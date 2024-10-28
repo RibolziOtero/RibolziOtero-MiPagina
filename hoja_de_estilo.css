@@ -305,8 +305,14 @@ main {
 }
 
 /* - Incluir el uso de al menos una fuente web */
+
+@font-face {
+    font-family: 'PlaywriteNL';
+    src: url('fonts/PlaywriteNL-VariableFont_wght.ttf') format('truetype');
+}
+
 .fijo h2 {
-    font-family: 'Playwrite GB S', sans-serif;
+    font-family: 'PlaywriteNL', sans-serif;
 }
 
 header {
