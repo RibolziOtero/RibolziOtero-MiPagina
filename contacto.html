@@ -37,27 +37,27 @@
                     <fieldset>
                         <legend>Datos personales:</legend>
                         <!--Nombre-->
-                        <p><label>Nombre: <input type="text" name="nombre" maxlength="20" required></label></p> <!--Si no pusiese el type text, el navegador lo asumiría por defecto, pero por el momento lo dejaré así. -->
+                        <p><label>Nombre: <input id="input-nombre" onblur="mostrar();" type="text" name="nombre" maxlength="20" required></label></p> <!--Si no pusiese el type text, el navegador lo asumiría por defecto, pero por el momento lo dejaré así. -->
                         <!--Apellido-->
-                        <p><label>Apellido: <input type="text" name="apellido" maxlength="20"></label></p>
+                        <p><label>Apellido: <input id="input-apellido" onblur="mostrar();" type="text" name="apellido" maxlength="20"></label></p>
                         <!--Email-->
-                        <p><label>Email: <input type="email" name="email" required></label></p> 
+                        <p><label>Email: <input id="input-email" onblur="mostrar();" type="email" name="email" required></label></p> 
                         <!--Teléfono-->
-                        <p><label>Teléfono: <input type="tel" name="telefono" placeholder="2920874624"></label></p>
+                        <p><label>Teléfono: <input id="input-telefono" onblur="mostrar();" type="tel" name="telefono" placeholder="2920874624"></label></p>
                         <!--Edad-->
                         <p>
-                            <label for="edad">Edad (entre 16 años y 120 años):</label>
-                            <input type="range" id="edad" min="16" max="120" oninput="document.getElementById('valorEdad').textContent = this.value">
-                            <span id="valorEdad">16</span> <!-- Mostrará el valor actual del control -->
+                            <label for="input-edad">Edad (entre 16 años y 120 años):</label>
+                            <input id="input-edad" type="range" id="edad" onblur="mostrar();" min="16" max="120" oninput="document.getElementById('valorEdad').textContent = this.value">
+                            <span id="valorEdad"></span> <!-- Mostrará el valor actual del control -->
                         </p>
 
                         <!--Dirección-->
-                        <p class="corregir-1"><label for="direccion">Dirección:</label></p>
-                        <p class="corregir-2"><textarea id="direccion" name="direccion" rows="4" cols="25"></textarea></p>
+                        <p class="corregir-1"><label for="input-direccion">Dirección:</label></p>
+                        <p class="corregir-2"><textarea id="input-direccion" onblur="mostrar();" name="direccion" rows="4" cols="25"></textarea></p>
                         <!--Provincia-->
                         <p>
-                            <label for="provincia">Provincia:</label>
-                            <input type="text" id="provincia" name="provincia" list="provinciasPatagonicas" />
+                            <label for="input-provincia">Provincia:</label>
+                            <input type="text" id="input-provincia" onblur="mostrar();" name="provincia" list="provinciasPatagonicas" />
                             <datalist id="provinciasPatagonicas">
                                 <option value="Neuquén"></option>
                                 <option value="Río Negro"></option>
@@ -67,7 +67,7 @@
                             </datalist>
                         </p>
                         <!--Código postal-->
-                        <p><label>Código postal: <input type="text" name="codi_postal" pattern="[A-Z][0-9]{4}[A-Z]{3}" placeholder="A1234ABC"></label></p>
+                        <p><label>Código postal: <input id="input-codigo-postal" onblur="mostrar();" type="text" name="codi_postal" pattern="[A-Z][0-9]{4}[A-Z]{3}" placeholder="A1234ABC"></label></p>
                     </fieldset>
             
                     <fieldset class="field">
@@ -83,10 +83,10 @@
                     <fieldset class="field">
                         <legend>Tipo de subscripción: </legend>
                         <!--Tipo de subscripcción-->
-                        <p><label>Deseo recibir noticias <input type="checkbox" name="opciones_de_avisos" value="noticias"></label></p> 
-                        <p><label>Deseo recibir promociones <input type="checkbox" name="opciones_de_avisos" value="promociones"></label></p>
-                        <p><label>Deseo recibir alertas <input type="checkbox" name="opciones_de_avisos" value="alertas" checked></label></p>
-                        <p><label>Deseo recibir avisos de eventos <input type="checkbox" name="opciones_de_avisos" value="avisos_de_eventos"></label></p>
+                        <p><label>Deseo recibir noticias <input onblur="mostrar();" type="checkbox" name="opciones_de_avisos" value="noticias"></label></p> 
+                        <p><label>Deseo recibir promociones <input onblur="mostrar();" type="checkbox" name="opciones_de_avisos" value="promociones"></label></p>
+                        <p><label>Deseo recibir alertas <input onblur="mostrar();" type="checkbox" name="opciones_de_avisos" value="alertas" checked></label></p>
+                        <p><label>Deseo recibir avisos de eventos <input onblur="mostrar();" type="checkbox" name="opciones_de_avisos" value="avisos_de_eventos"></label></p>
                     </fieldset>
 
                     <!--Botón de cargar-->
@@ -108,43 +108,43 @@
                     <tbody> <!-- sería el cuerpo de la tabla-->
                         <tr>
                             <td>Nombre</td> <!-- td sería el dato en la columna-->
-                            <td></td> <!-- Esto quiere decir que hay un segundo dato en la fila, pero que está vacío-->
+                            <td id="nombre-tabla"></td> <!-- Esto quiere decir que hay un segundo dato en la fila, pero que está vacío-->
                         </tr>
                         <tr>
                             <td>Apellido</td>
-                            <td></td>
+                            <td id="apellido-tabla"></td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td></td>
+                            <td id="email-tabla"></td>
                         </tr>
                         <tr>
                             <td>Teléfono</td>
-                            <td></td>
+                            <td id="telefono-tabla"></td>
                         </tr>
                         <tr>
                             <td>Edad</td>
-                            <td></td>
+                            <td id="edad-tabla"></td>
                         </tr>
                         <tr>
                             <td>Dirección</td>
-                            <td></td>
+                            <td id="direccion-tabla"></td>
                         </tr>
                         <tr>
                             <td>Provincia</td>
-                            <td></td>
+                            <td id="provincia-tabla"></td>
                         </tr>
                         <tr>
                             <td>Código postal</td>
-                            <td></td>
+                            <td id="codigo-postal-tabla"></td>
                         </tr>
                         <tr>
                             <td>Método de contacto</td>
-                            <td></td>
+                            <td id="radio-tabla"></td>
                         </tr>
                         <tr>
                             <td>Recibir</td>
-                            <td></td>
+                            <td id="opciones-de-avisos-tabla"></td>
                         </tr>
                 
                     </tbody>

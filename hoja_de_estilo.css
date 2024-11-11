@@ -164,7 +164,7 @@ table {
     border: 2px solid #ddd;
     margin-top: 15px;
     margin-bottom: 15px;
-    table-layout: auto; /* Asegura que el ancho de las columnas se ajuste automáticamente */
+    table-layout: fixed; /* Mantiene un ancho fijo para las columnas */
 }
 
 th {
@@ -179,6 +179,8 @@ td {
     border: 1px solid #ddd;
     padding: 7px;
     text-align: left;
+    white-space: normal; /* Permite saltos de línea */
+    word-wrap: break-word; /* Divide palabras largas si es necesario */
 }
 
 
@@ -326,8 +328,12 @@ header {
     overflow-y: auto;          /* Activa la barra de desplazamiento */
     border: 3px solid #ddd;    /* (Opcional) Borde para visualización */
     padding: 0 20px;
+}
 
-  }
+.section-acercade p:first-of-type {
+    margin-top: 15px; 
+}
+
   
 .acerca-de-sticky {
     position: sticky;          /* Hace que este h3 sea "sticky" */
@@ -685,4 +691,31 @@ fieldset .corregir-1 {
     100% {
         transform: rotateY(360deg); /* Rotación completa */
     }
+}
+
+
+
+
+
+
+/* Laboratorio 5: */
+
+#boton-leer-mas-contenedor {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+#boton-leer-mas {
+    background-color: #4caf50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño del texto */
+    padding: 15px;
+}
+
+#boton-leer-mas:hover {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    background-color: #ffb013; /* Color al pasar el cursor */
 }
