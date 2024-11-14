@@ -793,5 +793,9 @@ fieldset .corregir-1 {
     .section-juego input {
         width: 100%;
     }
+
+    #main-juego {
+        min-height: 750px;
+    }
 }
 
