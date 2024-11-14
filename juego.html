@@ -33,14 +33,21 @@
             </ul>
         </nav>
         <main>
-            <section class="section-index">
-              <h3>¡Hola a todos!</h3>
-              <p>
-                Espero que todo en este trabajo salga bien n_n
-              </p>
-              <p>
-                (jaja, al final pasaron cosas)
-              </p>
+            <section class="section-juego">
+              <h3>Juego de adivinanza de números</h3>
+              <div class="game-container">
+                    <p>Estoy pensando en un número entre 1 y 20. ¿Puedes adivinarlo?</p>
+                    <div>
+                        <p><label for="guess">Tu adivinanza: </label></p>
+                        <p><input type="number" id="guess" placeholder="Introduce un número"></p>
+                        <button onclick="checkGuess()" id="boton-adivinar">Adivinar</button>
+                        <button onclick="resetGame()" id="boton-reiniciar">Reiniciar</button>
+            
+                    </div>
+                    <p id="result"></p>
+                    <p id="attempts">Intentos restantes: <span id="attempts-left">5</span></p>
+              </div>
+    
             </section>
 
                 <!-- Botón con flecha para volver hacía el inicio al hacer click: -->
@@ -50,8 +57,6 @@
 
         </main>
 
-        
-        
         <footer>
             <p class="p1">
                 &copy; 2024 Mariel Nataly Ribolzi Otero. Proyecto académico. Todos los derechos reservados
@@ -62,5 +67,8 @@
         </footer>
 
         <script src="script.js" defer></script> <!-- Incluye archivo JavaScript aquí -->
+        <script src="script_juego.js" defer></script> <!-- Incluye archivo JavaScript del juego aquí -->
     </body>
 </html>
+
+

@@ -435,7 +435,7 @@ fieldset .corregir-1 {
     }
 
     .fijo h2 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .header-principal h1,
@@ -452,15 +452,30 @@ fieldset .corregir-1 {
 
 
 
+
     nav {
         padding: 10px 0px;
         padding-right: 11px;
     }
 
-    nav ul li:nth-child(2) {
-        padding-right: 11px;
+    
+    nav ul li:nth-child(1) {
+        padding-left: 8px;
     }
 
+    nav ul li:nth-child(2) {
+        padding-right: 8px;
+    }
+
+    nav ul li:nth-child(4) {
+        padding-right: 0px;
+    }
+
+    nav a {
+        font-size: 16px; /* Ajusta el tamaño de letra a tu preferencia */
+      }
+      
+    
     .header-principal {
         position: relative;
     }
@@ -719,3 +734,64 @@ fieldset .corregir-1 {
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     background-color: #ffb013; /* Color al pasar el cursor */
 }
+
+
+
+
+/* Laboratorio 6: */
+
+.section-juego {
+    text-align: center;
+    margin-top: 15px;
+    border: 2px solid #f19136;
+    width: 80%;
+    padding: 30px;
+}
+
+.section-juego p {
+    margin-top: 15px;
+    color: white;
+}
+
+
+#boton-adivinar {
+    margin-top: 15px;
+    background-color: #4caf50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño del texto */
+    padding: 15px;
+}
+
+#boton-adivinar:hover {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    background-color: #ffb013; /* Color al pasar el cursor */
+}
+
+#boton-reiniciar {
+    margin-top: 15px;
+    background-color: #f5421a; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño del texto */
+    padding: 15px;
+}
+
+#boton-reiniciar:hover {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    background-color: #ffb013; /* Color al pasar el cursor */
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+    .section-juego {
+        width: 93%;
+    }
+
+    .section-juego input {
+        width: 100%;
+    }
+}
+

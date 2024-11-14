@@ -1,5 +1,7 @@
 // script.js
 
+
+
 // - En la página de "Acerca de" hacer un botón de "Leer más". Deberá mostrarse el currículum de manera abreviada y al hacer clic en el botón de leer más, 
 // deberá revelarse el CV completo (rellenar con Lorem Ipsum si es necesario)
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
 // Selecciona todos los botones con la clase 'boton-subir'
 const botones = document.querySelectorAll('.boton-subir');
 // Agrega un evento a cada botón:
@@ -32,6 +36,8 @@ botones.forEach(boton => {
     });
 });
 
+
+
 // Función que actualiza el valor mostrado del control de rango de edad:
 // (Funciona solo para un id específico)
 document.getElementById('edad').addEventListener('input', function() {
@@ -41,9 +47,7 @@ document.getElementById('edad').addEventListener('input', function() {
 
 
 
-// LABORATORIO 4:
-// - Añadir interactividad: Todo lo cargado en el formulario debe reflejarse en la tabla inferior al terminar de rellenar cada campo (sin necesidad de botones)
-
+// Todo lo cargado en el formulario debe reflejarse en la tabla inferior al terminar de rellenar cada campo (sin necesidad de botones)
 function mostrar() {
 
     // Nombre:
@@ -106,4 +110,7 @@ function mostrar() {
    variable_opciones_de_avisos_tabla.textContent = valores_avisos.length > 0 ? valores_avisos.join(", ") : "No seleccionados";
 
 }
+
+
+
 
